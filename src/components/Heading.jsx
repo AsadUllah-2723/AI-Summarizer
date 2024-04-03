@@ -30,7 +30,7 @@ const Heading = () => {
 
       <CopyToClipboard
         text={
-          " https://medium.com/@VidGeniusAI/how-to-summarize-articles-in-60-seconds-or-less-with-ai-49a76a6eea5b"
+          "https://medium.com/@elle.neal_71064/8-real-world-examples-of-ai-powered-summarization-4c76d823706a"
         }
         onCopy={() => setState({ copied: true })}
       >

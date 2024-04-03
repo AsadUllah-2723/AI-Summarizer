@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLazyGetSummaryQuery } from "../redux/api";
 import { ThreeCircles } from "react-loader-spinner";
+import { Typewriter, useTypewriter } from "react-simple-typewriter";
 
 const Summary = () => {
   const [article, setArticle] = useState({ url: "", summary: "" });
@@ -42,8 +43,8 @@ const Summary = () => {
           {isFetching ? (
             <ThreeCircles
               visible={true}
-              height="100"
-              width="100"
+              height="50"
+              width="50"
               color="#00000"
               ariaLabel="three-circles-loading"
               wrapperStyle={{}}
@@ -60,9 +61,17 @@ const Summary = () => {
               <div className="flex flex-col gap-3">
                 <h2 className="text-3xl font-bold text-black">Summary</h2>
                 <div className="summary_box">
-                  <p>{article.summary}</p>
+                  <p>
+                    <Typewriter
+                      words={[article.summary]}
+                      loop={1}
+                      cursor
+                      cursorStyle="_"
+                      typeSpeed={10}
+                    />
+                  </p>
                 </div>
-                <button className="black_btn">Get Summary</button>
+                <button className="black_btn">Reset</button>
               </div>
             )
           )}
