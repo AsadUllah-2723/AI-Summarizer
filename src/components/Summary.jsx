@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLazyGetSummaryQuery } from "../redux/api";
 import { ThreeCircles } from "react-loader-spinner";
-import { Typewriter, useTypewriter } from "react-simple-typewriter";
+import { Typewriter } from "react-simple-typewriter";
 
 const Summary = () => {
   const [article, setArticle] = useState({ url: "", summary: "" });
@@ -15,12 +15,11 @@ const Summary = () => {
     if (data?.summary) {
       const newArticle = { ...article, summary: data.summary };
       setArticle(newArticle);
-      setOriginalArticle(newArticle);
     }
   };
 
   const handleReset = () => {
-    setArticle(originalArticle); // Restore original article state
+    setArticle({ url: "", summary: "" });
   };
 
   return (
@@ -76,7 +75,9 @@ const Summary = () => {
                     />
                   </p>
                 </div>
-                <button className="black_btn" onClick={handleReset}>Reset</button>
+                <button className="black_btn" onClick={handleReset}>
+                  Reset
+                </button>
               </div>
             )
           )}
