@@ -15,7 +15,12 @@ const Summary = () => {
     if (data?.summary) {
       const newArticle = { ...article, summary: data.summary };
       setArticle(newArticle);
+      setOriginalArticle(newArticle);
     }
+  };
+
+  const handleReset = () => {
+    setArticle(originalArticle); // Restore original article state
   };
 
   return (
@@ -71,7 +76,7 @@ const Summary = () => {
                     />
                   </p>
                 </div>
-                <button className="black_btn">Reset</button>
+                <button className="black_btn" onClick={handleReset}>Reset</button>
               </div>
             )
           )}

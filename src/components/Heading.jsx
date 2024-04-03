@@ -19,7 +19,7 @@ const Heading = () => {
   return (
     <header className="w-full flex justify-center items-center flex-col">
       <nav className="flex justify-center items-center w-full pt-2 mb-12">
-        <h1 className="logo object-contain">AI - Summarizer</h1>
+        <h1 className="logo object-contain">AI - ARTICLE SUMMARIZER</h1>
       </nav>
 
       <h1 className="head_text ">GET SUMMARY OF ANY ARTICLE</h1>
