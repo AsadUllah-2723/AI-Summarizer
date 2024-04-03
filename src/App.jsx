@@ -1,20 +1,20 @@
-import React from 'react'
-import Summary from "./components/Summary"
-import Hero from "./components/Heading"
+import React from "react";
+import Summary from "./components/Summary";
+import Heading from "./components/Heading";
 
 const App = () => {
   return (
     <main>
       <div className="main">
-        <div className='gradient' />
+        <div className="gradient" />
       </div>
 
       <div className="app">
-        <Hero />
+        <Heading />
         <Summary />
       </div>
     </main>
-  )
-}
+  );
+};
 
-export default App
+export default App;

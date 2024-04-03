@@ -18,7 +18,7 @@ const Summary = () => {
   };
 
   return (
-    <section className="mt-16 w-full max-w-xl">
+    <section className="mt-12 w-full max-w-xl">
       <div className="flex flex-col w-full gap-3">
         <form
           className="relative flex flex-col  justify-center items-center"
@@ -62,6 +62,7 @@ const Summary = () => {
                 <div className="summary_box">
                   <p>{article.summary}</p>
                 </div>
+                <button className="black_btn">Get Summary</button>
               </div>
             )
           )}
