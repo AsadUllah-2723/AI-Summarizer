@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLazyGetSummaryQuery } from "../redux/api";
 import { ThreeCircles } from "react-loader-spinner";
 import { Typewriter } from "react-simple-typewriter";
+import { useToast } from "./ui/use-toast";
 
 const Summary = () => {
   const [article, setArticle] = useState({ url: "", summary: "" });
@@ -21,6 +22,14 @@ const Summary = () => {
   const handleReset = () => {
     setArticle({ url: "", summary: "" });
   };
+
+  const { toast } = useToast();
+  useEffect(() => {
+    toast({
+      title: "Something went wrong",
+      variant: "destructive",
+    });
+  }, [error]);
 
   return (
     <section className="mt-12 w-full max-w-xl">
@@ -56,9 +65,7 @@ const Summary = () => {
             />
           ) : error ? (
             <p className="font-inter font-bold text-center text-black">
-              Server Error
-              <br />
-              <span>{error?.data?.error}</span>
+              <span className="text-red-600">{error?.data?.error}</span>
             </p>
           ) : (
             article.summary && (
